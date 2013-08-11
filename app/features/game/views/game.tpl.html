@@ -1,6 +1,6 @@
 <div id="game">
     
-    <div ng-controller="BoardCtrl">
+    <div class="board-section" ng-controller="BoardCtrl">
 
         <!-- <div class="board">
             <div class="board-col" ng-repeat="row in tiles">
@@ -9,6 +9,41 @@
         </div> -->
 
         <canvas class="board" id="board" width="500px" height="500px"></canvas>
+    </div>
+
+    <div class="settings-section" ng-controller="GameSettingsCtrl">
+        <form action="" class="">
+            <fieldset>
+                <div class="form-group">
+                    <label for="liveTiles" class="control-label">Live tiles</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="liveTiles" min="1" step="1" ng-model="settings.liveTilesPercentage" placeholder="60">
+                        <span class="input-group-addon">%</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tileSize" class="control-label">Tile size</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="tileSize" min="1" step="1" ng-model="settings.tileSize" placeholder="1">
+                        <span class="input-group-addon">px</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="delayCycle" class="control-label">Delay cycle</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="delayCycle" min="1" step="1" ng-model="settings.delayCycle" placeholder="10">
+                        <span class="input-group-addon">ms</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-xs">Reset</button>
+                </div>
+
+            </fieldset>
+        </form>
     </div>
 
 </div>

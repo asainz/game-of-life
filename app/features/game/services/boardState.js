@@ -14,7 +14,7 @@ angular.module('app.game').service('boardState',function(gameSettings){
         for(i=0; i < totalRows ; i++){
             board[i] = [];
             for(j=0 ; j < totalCols ; j++){
-                tile = currentLiveTiles < liveTilesTotalAmount && Math.random() > (1-settings.liveTilesAmount/100) ? 1 : 0;
+                tile = currentLiveTiles < liveTilesTotalAmount && Math.random() > (1-settings.liveTilesPercentage/100) ? 1 : 0;
                 if(tile === 1){
                     currentLiveTiles++;
                 }

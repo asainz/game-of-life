@@ -1,3 +1,8 @@
+.board-section{
+    float: left;
+    padding: 30px;
+}
+
 .board{
     box-shadow: 0 0 0 1px rgba(0,0,0,.1),
                 0 0 0 1px rgba(0,0,0,.2),

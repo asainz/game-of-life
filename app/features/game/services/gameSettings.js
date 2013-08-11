@@ -5,18 +5,17 @@ angular.module('app.game').service('gameSettings',function(){
     var defaults = {
             boardWidth: 500,
             boardHeight: 500,
-            tileWidth: 1,
-            tileHeight: 1,
-            liveTilesAmount: 60, //percentage
+            tileSize: 1,
+            liveTilesPercentage: 70, //percentage
             delayCycle: 25 //ms
         },
         current = {};
 
     function getBoardInfo(settings){
-        var totalRows = settings.boardWidth / settings.tileWidth,
-            totalCols = settings.boardWidth / settings.tileWidth,
+        var totalRows = settings.boardWidth / settings.tileSize,
+            totalCols = settings.boardHeight / settings.tileSize,
             tilesTotalAmount = totalRows * totalCols,
-            liveTilesTotalAmount = Math.round( settings.liveTilesAmount * tilesTotalAmount / 100 );
+            liveTilesTotalAmount = Math.round( settings.liveTilesPercentage * tilesTotalAmount / 100 );
 
         return {
             totalRows: totalRows,
@@ -31,8 +30,15 @@ angular.module('app.game').service('gameSettings',function(){
         return _.extend({}, settings, getBoardInfo(settings));
     }
 
+    function update(params){
+        for(var key in params){
+            current[key] = params[key];
+        }
+    }
+
     return {
-        get: get
+        get: get,
+        update: update
     };
 
 });
