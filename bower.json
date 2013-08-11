@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "~1.0.7",
+    "json3": "~3.2.4",
+    "es5-shim": "~2.0.8",
+    "angular-resource": "~1.0.7",
+    "angular-cookies": "~1.0.7",
+    "angular-sanitize": "~1.0.7",
+    "angular-ui-router": "stable"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.0.7",
+    "angular-scenario": "~1.0.7",
+    "karma-growl-reporter": "https://github.com/karma-runner/karma-growl-reporter.git#~0.0.2",
+    "phantom": "~1.9.1"
+  }
+}
